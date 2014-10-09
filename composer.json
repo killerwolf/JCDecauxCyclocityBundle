@@ -10,5 +10,9 @@
             "name": "Hamdi LAADHARI",
             "email": "killerwolf06@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": { "Killerwolf\\JCDecauxCyclocityBundle": "" }
+    },
+    "target-dir": "Killerwolf/JCDecauxCyclocityBundle"
 }
