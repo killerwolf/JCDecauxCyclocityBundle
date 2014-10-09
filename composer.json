@@ -1,0 +1,14 @@
+{
+    "name": "killerwolf/jcdecauxcyclocity-bundle",
+    "description": "this bundle provides easy integration of the Cyclocity OpenData Rest API provided by JCDecaux",
+    "require": {
+        "killerwolf/jcdodatawrapper": "~0.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hamdi LAADHARI",
+            "email": "killerwolf06@gmail.com"
+        }
+    ]
+}
