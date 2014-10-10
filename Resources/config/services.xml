@@ -6,7 +6,7 @@
 
     <services>
         <service id="cyclocity.data" class="JCDodatawrapper\Vls\Wrapper">
-            <argument>3b195bafb4926f79caa31eac82b5236afebc27d3</argument>
+            <argument>%killerwolf_jc_decaux_cyclocity.api_key%</argument>
             <call method="setHTTPClient">
                 <argument type="service" id="cyclocity.http_client" />
             </call>
