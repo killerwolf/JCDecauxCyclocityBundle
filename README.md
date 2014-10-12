@@ -1,5 +1,8 @@
 # JCDecauxCyclocityBundle #
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/killerwolf/JCDecauxCyclocityBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/killerwolf/JCDecauxCyclocityBundle/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/83afaaf0-b87b-44f5-bf1c-862520a3e4f3/mini.png)](https://insight.sensiolabs.com/projects/83afaaf0-b87b-44f5-bf1c-862520a3e4f3)
+
 This is a simple bundle to use the [JCDecaux Cyclocity OpenData Rest API](https://developer.jcdecaux.com) in a Symfony2 project
 
 ## Install ##
