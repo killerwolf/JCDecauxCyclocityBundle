@@ -1,1 +1,53 @@
-Hello {{ name }}!
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.3/css/jquery.dataTables.min.css">
+    <style>
+    div.container {
+        width: 80%;
+    }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="//code.jquery.com/jquery-1.11.1.min.js" ></script>
+    <script src="//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>
+    <script>
+    jQuery(document).ready(function() {
+        jQuery('#velib').DataTable();
+    } );
+    </script>
+{% endblock %}
+
+{% block body %}
+    {% if contracts is defined %}
+    <ul>
+    {% for contract in contracts %}
+        <li>{{ contract.name }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    <table id="velib" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Available Bikes</td>
+                <td>Available Stands</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for station in stations %}
+            <tr>
+                <td style="background-color:{% if station.status == 'OPEN' %}green{% else %}red{% endif %}">{{ station.number }}</td>
+                <td>{{ station.name }}<br /><b>ADRESS:</b> {{ station.address }}</td>
+                <td>{{ station.available_bikes }}</td>
+                <td>{{ station.available_bike_stands }}</td> 
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+        
+    </table>
+{% endblock %}

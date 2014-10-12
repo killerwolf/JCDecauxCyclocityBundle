@@ -4,14 +4,18 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <services>
-        <service id="cyclocity.data" class="JCDodatawrapper\Vls\Wrapper">
+    <parameters>
+        <parameter key="killerwolf_jc_decaux_cyclocity.service.cyclocity.class">JCDodatawrapper\Vls\Wrapper</parameter>
+        <parameter key="killerwolf_jc_decaux_cyclocity.service.cyclocity.http_client.class">JCDodatawrapper\Vls\HTTPClientCurl</parameter>
+    </parameters>
+    
+    <services>    
+        <service id="cyclocity.data" class="%killerwolf_jc_decaux_cyclocity.service.cyclocity.class%">
             <argument>%killerwolf_jc_decaux_cyclocity.api_key%</argument>
             <call method="setHTTPClient">
                 <argument type="service" id="cyclocity.http_client" />
             </call>
         </service>
-        <service id="cyclocity.http_client" class="JCDodatawrapper\Vls\HTTPClientCurl">
-        </service>
+        <service id="cyclocity.http_client" class="%killerwolf_jc_decaux_cyclocity.service.cyclocity.http_client.class%"></service>
     </services>
 </container>

@@ -3,13 +3,19 @@
 namespace Killerwolf\JCDecauxCyclocityBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction(Request $request)
     {
     	$api = $this->get('cyclocity.data');
-    	var_dump($api->getContracts());
-        return $this->render('KillerwolfJCDecauxCyclocityBundle:Default:index.html.twig', array('name' => $name));
+
+        return $this->render(
+            'KillerwolfJCDecauxCyclocityBundle:Default:index.html.twig', 
+            [
+                'stations' => $api->getStationsByContract( 'Paris' )
+            ]
+        );
     }
 }
